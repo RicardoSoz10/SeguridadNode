@@ -11,13 +11,11 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-let index = require('./routes/index')
-let auth = require('./routes/login')
+let login = require('./routes/login')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
-app.use('/', index)
-app.use('/api', auth)
+app.use('/', login)
 
 const PORT = 3000
 
